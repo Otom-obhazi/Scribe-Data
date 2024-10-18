@@ -2,7 +2,7 @@
 # All Nigerian Pidgin (Q33655) nouns, their plurals and their genders.
 # Enter this query at https://query.wikidata.org/.
 
-SELECT DISTINCT
+SELECT
   (REPLACE(STR(?lexeme), "http://www.wikidata.org/entity/", "") AS ?lexemeID)
   ?singular
   ?plural
@@ -11,7 +11,7 @@ SELECT DISTINCT
 WHERE {
   VALUES ?nounTypes {wd:Q1084 wd:Q147276} # Nouns and proper nouns
 
-  ?lexeme dct:language wd:Q33655 ; # Nigerian Pidgin
+  ?lexeme dct:language wd:Q33655 ;  # Nigerian Pidgin
     wikibase:lexicalCategory ?nounTypes ;
     wikibase:lemma ?singular .
 
